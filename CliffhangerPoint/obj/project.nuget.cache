@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "dISC9iOQBmk=",
+  "success": true,
+  "projectFilePath": "/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/CliffhangerPoint.csproj",
+  "expectedPackageFiles": [
+    "/Users/dominikbonk/.nuget/packages/microsoft.aspnetcore.openapi/9.0.2/microsoft.aspnetcore.openapi.9.0.2.nupkg.sha512",
+    "/Users/dominikbonk/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512",
+    "/Users/dominikbonk/.nuget/packages/scalar.aspnetcore/2.0.18/scalar.aspnetcore.2.0.18.nupkg.sha512",
+    "/Users/dominikbonk/.nuget/packages/swashbuckle.aspnetcore.swaggerui/7.3.0/swashbuckle.aspnetcore.swaggerui.7.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

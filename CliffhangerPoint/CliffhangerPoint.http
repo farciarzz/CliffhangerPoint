@@ -1,0 +1,6 @@
+@CliffhangerPoint_HostAddress = http://localhost:5163
+
+GET {{CliffhangerPoint_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
