@@ -1,4 +1,5 @@
 using System;
+using CliffhangerPoint.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,12 +12,14 @@ public class ApplicationDbContext : IdentityDbContext<User>
   {
   }
 
-    protected override void OnModelCreating(ModelBuilder builder)
-    {
-        base.OnModelCreating(builder);
+  public DbSet<Movie> Movies { get; set; }  
 
-        builder.Entity<User>().Property(u => u.Initials).HasMaxLength(5);
+  protected override void OnModelCreating(ModelBuilder builder)
+  {
+      base.OnModelCreating(builder);
 
-        builder.HasDefaultSchema("identity");
-    }
+      builder.Entity<User>().Property(u => u.Initials).HasMaxLength(5);
+
+      builder.HasDefaultSchema("identity");
+  }
 }

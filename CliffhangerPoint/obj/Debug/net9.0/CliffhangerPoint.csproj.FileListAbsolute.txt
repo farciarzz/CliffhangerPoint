@@ -36,8 +36,6 @@
 /Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/EntityFramework.SqlServer.dll
 /Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/EntityFramework.dll
 /Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Humanizer.dll
-/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.AspNet.Identity.Core.dll
-/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.AspNet.Identity.EntityFramework.dll
 /Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 /Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.Build.Locator.dll
@@ -144,3 +142,8 @@
 /Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 /Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
 /Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/obj/Debug/net9.0/CliffhangerPoint.sourcelink.json
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/MediatR.dll
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/MediatR.Contracts.dll
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
