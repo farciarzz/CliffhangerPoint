@@ -12,15 +12,15 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CliffhangerPoint.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250302195103_MySecondMigration")]
-    partial class MySecondMigration
+    [Migration("20250317223413_AddingMoviesandUsers")]
+    partial class AddingMoviesandUsers
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasDefaultSchema("identity")
+                .HasDefaultSchema("dbo")
                 .HasAnnotation("ProductVersion", "9.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -44,10 +44,6 @@ namespace CliffhangerPoint.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("boolean");
-
-                    b.Property<string>("Initials")
-                        .HasMaxLength(5)
-                        .HasColumnType("character varying(5)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("boolean");
@@ -82,6 +78,14 @@ namespace CliffhangerPoint.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
+                    b.Property<string>("login")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -91,7 +95,29 @@ namespace CliffhangerPoint.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
-                    b.ToTable("AspNetUsers", "identity");
+                    b.ToTable("AspNetUsers", "dbo");
+                });
+
+            modelBuilder.Entity("CliffhangerPoint.Models.Movie", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Genre")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Movies", "dbo");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -117,7 +143,7 @@ namespace CliffhangerPoint.Migrations
                         .IsUnique()
                         .HasDatabaseName("RoleNameIndex");
 
-                    b.ToTable("AspNetRoles", "identity");
+                    b.ToTable("AspNetRoles", "dbo");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -142,7 +168,7 @@ namespace CliffhangerPoint.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetRoleClaims", "identity");
+                    b.ToTable("AspNetRoleClaims", "dbo");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -167,7 +193,7 @@ namespace CliffhangerPoint.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserClaims", "identity");
+                    b.ToTable("AspNetUserClaims", "dbo");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
@@ -189,7 +215,7 @@ namespace CliffhangerPoint.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserLogins", "identity");
+                    b.ToTable("AspNetUserLogins", "dbo");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
@@ -204,7 +230,7 @@ namespace CliffhangerPoint.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetUserRoles", "identity");
+                    b.ToTable("AspNetUserRoles", "dbo");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -223,7 +249,7 @@ namespace CliffhangerPoint.Migrations
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("AspNetUserTokens", "identity");
+                    b.ToTable("AspNetUserTokens", "dbo");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

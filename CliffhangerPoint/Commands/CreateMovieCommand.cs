@@ -3,4 +3,4 @@ using MediatR;
 
 namespace CliffhangerPoint.Commands;
 
-public record CreateMovieCommand(Guid Id, string Name, int Year, string Genre) : IRequest<Guid>;
+public record CreateMovieCommand(string Name, int Year, string Genre) : IRequest<Guid>;

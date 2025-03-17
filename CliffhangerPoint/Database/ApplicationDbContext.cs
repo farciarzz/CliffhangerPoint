@@ -18,8 +18,6 @@ public class ApplicationDbContext : IdentityDbContext<User>
   {
       base.OnModelCreating(builder);
 
-      builder.Entity<User>().Property(u => u.Initials).HasMaxLength(5);
-
-      builder.HasDefaultSchema("identity");
+      builder.HasDefaultSchema("dbo");
   }
 }
