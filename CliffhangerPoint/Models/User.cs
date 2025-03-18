@@ -6,8 +6,6 @@ namespace CliffhangerPoint.Database;
 
 public class User : IdentityUser
 {
-  public string login {get; set;}
-
-  public string password {get; set;}
+  public string? Initials {get; set;}
 
 }

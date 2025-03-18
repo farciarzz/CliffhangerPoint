@@ -1,5 +1,6 @@
 using CliffhangerPoint.Database;
 using CliffhangerPoint.Extensions;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -20,13 +21,13 @@ builder.Services.AddSwaggerGen();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-// builder.Services.AddAuthorization();
-// builder.Services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme)
-//     .AddBearerToken(IdentityConstants.BearerScheme);
+builder.Services.AddAuthorization();
+builder.Services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme)
+    .AddBearerToken(IdentityConstants.BearerScheme);
 
-// builder.Services.AddIdentityCore<User>()
-//     .AddEntityFrameworkStores<ApplicationDbContext>()
-//     .AddApiEndpoints();
+builder.Services.AddIdentityCore<User>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddApiEndpoints();
 
 
 var app = builder.Build();
@@ -47,10 +48,8 @@ if (app.Environment.IsDevelopment())
     app.ApplyMigrations();
 }
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
-////app.UseAuthorization();
-
-//app.MapIdentityApi<User>();
+app.MapIdentityApi<User>();
 
 app.Run();
