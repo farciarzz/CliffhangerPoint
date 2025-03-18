@@ -1,5 +1,7 @@
 using System;
+using CliffhangerPoint.Database.Configurations;
 using CliffhangerPoint.Models;
+using CliffhangerPoint.Models.EnumType;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,12 +14,14 @@ public class ApplicationDbContext : IdentityDbContext<User>
   {
   }
 
-  public DbSet<Movie> Movies { get; set; }  
+    public DbSet<Movie> Movies { get; set; }
 
-  protected override void OnModelCreating(ModelBuilder builder)
-  {
-      base.OnModelCreating(builder);
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
 
-      builder.HasDefaultSchema("dbo");
-  }
+        builder.HasDefaultSchema("dbo");
+
+        builder.ApplyConfiguration(new MovieConfiguration());
+    }
 }

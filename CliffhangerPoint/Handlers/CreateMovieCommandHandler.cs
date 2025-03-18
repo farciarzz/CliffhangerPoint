@@ -3,14 +3,15 @@ using MediatR;
 using CliffhangerPoint.Commands;
 using CliffhangerPoint.Database;
 using CliffhangerPoint.Models;
+using CliffhangerPoint.Models.EnumType;
 
 namespace CliffhangerPoint.Handlers;
 
-public class CreateMovieHandler : IRequestHandler<CreateMovieCommand, Guid>
+public class CreateMovieCommandHandler : IRequestHandler<CreateMovieCommand, Guid>
 {
     private readonly ApplicationDbContext _context;
 
-    public CreateMovieHandler(ApplicationDbContext context)
+    public CreateMovieCommandHandler(ApplicationDbContext context)
     {
         _context = context;
     }
@@ -20,9 +21,11 @@ public class CreateMovieHandler : IRequestHandler<CreateMovieCommand, Guid>
       var movie = new Movie
       {
         Id = Guid.NewGuid(),
-        Name = request.Name,
+        Title = request.Title,
+        Description = request.Description,
         Year = request.Year,
-        Genre = request.Genre
+        Duration = request.Duration,
+        Genre = (MovieGenre)Enum.Parse(typeof(MovieGenre), request.Genre, true)
       };
 
       _context.Movies.Add(movie);
