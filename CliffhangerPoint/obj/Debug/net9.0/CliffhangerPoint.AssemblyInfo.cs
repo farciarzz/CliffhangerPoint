@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CliffhangerPoint")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed9db1395be6a21eb1896011a0e5d9d138555608")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6a02e3fdba25b829c336073a2a58bc7c4bf8897")]
 [assembly: System.Reflection.AssemblyProductAttribute("CliffhangerPoint")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CliffhangerPoint")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

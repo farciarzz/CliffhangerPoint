@@ -24,5 +24,6 @@ public class ApplicationDbContext : IdentityDbContext<User>
         builder.HasDefaultSchema("dbo");
 
         builder.ApplyConfiguration(new MovieConfiguration());
+        builder.ApplyConfiguration(new UserConfiguration());
     }
 }

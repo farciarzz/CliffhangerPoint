@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CliffhangerPoint.Controllers;
 
 [Route("api/[controller]")]
+[Authorize]
 [ApiController]
 public class MoviesController : ControllerBase
 {
