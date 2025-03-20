@@ -487,3 +487,4 @@ $RECYCLE.BIN/
 
 # Custom
 *.Development.json
+*.json
