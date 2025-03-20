@@ -2,6 +2,7 @@ using System;
 using System.Net;
 using System.Runtime.CompilerServices;
 using CliffhangerPoint.Commands;
+using CliffhangerPoint.Controllers.Dtos;
 using CliffhangerPoint.Database;
 using CliffhangerPoint.Models;
 using MediatR;
@@ -41,4 +42,33 @@ public class MoviesController : ControllerBase
     List<Movie> movies = await _mediator.Send(new GetMoviesCommand());
     return movies;
   }
+
+  [HttpGet]
+  [Route("GetMovie/{id}")]
+  public async Task<Movie> Get([FromRoute]Guid id)
+  {
+    Movie movie = await _mediator.Send(new GetMovieCommand(id));
+    return movie;
+  }
+
+  [HttpPut]
+  [Route("{id}")]
+  public async Task<IActionResult> Put([FromRoute] Guid id, PutMovieDto putMovieDto)
+  {
+    if (id != putMovieDto.Id)
+    {
+        return BadRequest();
+    }
+    await _mediator.Send(new PutMovieCommand(putMovieDto));
+    return Ok();
+  }
+
+  [HttpDelete]
+  [Route("{id}")]
+  public async Task<bool> Delete([FromRoute]Guid id)
+  {
+    bool info = await _mediator.Send(new DeleteMovieCommand(id));
+    return info;
+  }
+  
 }

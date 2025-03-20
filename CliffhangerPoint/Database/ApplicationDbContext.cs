@@ -15,7 +15,7 @@ public class ApplicationDbContext : IdentityDbContext<User>
   }
 
     public DbSet<Movie> Movies { get; set; }
-    public DbSet<User> Users { get; set; }
+    public DbSet<TVShow> TVShows { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -25,5 +25,6 @@ public class ApplicationDbContext : IdentityDbContext<User>
 
         builder.ApplyConfiguration(new MovieConfiguration());
         builder.ApplyConfiguration(new UserConfiguration());
+        builder.ApplyConfiguration(new TVShowConfigurations());
     }
 }

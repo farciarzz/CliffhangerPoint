@@ -25,7 +25,7 @@ public class CreateMovieCommandHandler : IRequestHandler<CreateMovieCommand, Gui
         Description = request.Description,
         Year = request.Year,
         Duration = request.Duration,
-        Genre = (MovieGenre)Enum.Parse(typeof(MovieGenre), request.Genre, true)
+        Genre = (GenreType)Enum.Parse(typeof(GenreType), request.Genre, true)
       };
 
       _context.Movies.Add(movie);

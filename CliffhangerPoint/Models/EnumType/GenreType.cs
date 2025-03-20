@@ -2,7 +2,7 @@ using System;
 
 namespace CliffhangerPoint.Models.EnumType;
 
-public enum MovieGenre
+public enum GenreType
 {
     Action,
     Adventure,

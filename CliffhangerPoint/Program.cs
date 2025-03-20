@@ -1,7 +1,10 @@
+using System.Text;
 using CliffhangerPoint.Database;
 using CliffhangerPoint.Extensions;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,18 +25,18 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddOpenApi();
 
 builder.Services.AddAuthorization();
+
 builder.Services.AddAuthentication(options =>
     {
-        options.DefaultScheme = IdentityConstants.ApplicationScheme;
-        options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+        options.DefaultScheme = IdentityConstants.BearerScheme;
+        options.DefaultChallengeScheme = IdentityConstants.BearerScheme;
     }
-).AddCookie(IdentityConstants.ApplicationScheme)
-    .AddBearerToken(IdentityConstants.BearerScheme);
+).AddBearerToken(IdentityConstants.BearerScheme); //.AddCookie(IdentityConstants.ApplicationScheme)
+    //.AddBearerToken(IdentityConstants.BearerScheme);
 
-builder.Services.AddIdentityCore<User>()
+builder.Services.AddIdentityCore<User>()//(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddApiEndpoints();
-
 
 var app = builder.Build();
 
@@ -54,7 +57,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.MapIdentityApi<User>();
-
 app.Run();

@@ -16,7 +16,7 @@ namespace CliffhangerPoint.Database.Configurations
             builder.Property(e => e.Year);
             builder.Property(e => e.Genre).HasConversion(
                 v => v.ToString(),
-                v => (MovieGenre)Enum.Parse(typeof(MovieGenre), v)
+                v => (GenreType)Enum.Parse(typeof(GenreType), v)
             ).HasMaxLength(100);
             builder.Property(e => e.Duration).HasColumnType("time");
         }

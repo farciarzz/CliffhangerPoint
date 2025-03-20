@@ -147,3 +147,11 @@
 /Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
+/Users/dominikbonk/VSC_Projects/CliffhangerPoint/CliffhangerPoint/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll

@@ -4,7 +4,7 @@ using CliffhangerPoint.Models.EnumType;
 
 namespace CliffhangerPoint.Models;
 
-public class Movie 
+public class TVShow
 {
   [Key]
   public Guid Id { get; set; }
@@ -23,5 +23,4 @@ public class Movie
   public GenreType Genre { get; set; }
 
   public TimeSpan? Duration { get; set; }
-
 }
