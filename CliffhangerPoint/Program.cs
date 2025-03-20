@@ -1,6 +1,7 @@
 using System.Text;
 using CliffhangerPoint.Database;
 using CliffhangerPoint.Extensions;
+using DM.MovieApi;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -58,4 +59,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapIdentityApi<User>();
+
+MovieDbFactory.RegisterSettings(builder.Configuration.GetSection("TheMovieDB:BearerToken").Value);
+
 app.Run();
